@@ -10,22 +10,19 @@
 */
 
 function countDuplicate(str) {
-  debugger;
   let count = 0;
   const strArr = str.split("");
   const resArr = [];
   strArr.forEach((letter) => {
     const test = new RegExp(`${letter}`, "gi");
     if (!resArr.includes(letter.toLowerCase())) {
-      if (str.match(test).length < 0);
-      {
-        console.log(typeof str.match(test));
-        console.log(typeof str.match(test).length);
+      if (str.match(test).length > 1) {
         count++;
       }
       resArr.push(letter.toLowerCase());
     }
   });
+  console.log(count);
 }
 
-countDuplicate("Indivisibilities");
+countDuplicate("aabBcde");
